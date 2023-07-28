@@ -46,7 +46,8 @@ public class WebAppContext extends BaseSiteMeshContext {
      * The name of the request attribute under which the original
      * servlet path is made available to the target of a forward
      */
-    static final String FORWARD_SERVLET_PATH = "jakarta.servlet.forward.servlet_path";
+    static final String
+            FORWARD_SERVLET_PATH = "jakarta.servlet.forward.servlet_path";
 
     private final String contentType;
     private final HttpServletRequest request;
@@ -179,7 +180,7 @@ public class WebAppContext extends BaseSiteMeshContext {
         if (dispatcher == null) {
             throw new ServletException("Not found: " + path);
         }
-        dispatcher.forward(request, response);
+        dispatcher.include(request, response);
     }
 
 }
